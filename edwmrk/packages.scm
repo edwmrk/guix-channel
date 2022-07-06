@@ -60,7 +60,7 @@
 (define-public pcsx2
   (package
     (name "pcsx2")
-    (version "d3aace98ac4a52cf13fbd677de0639e17ea5a9ff")
+    (version "v1.7.3055")
     (source
       (origin
         (method git-fetch)
@@ -68,7 +68,7 @@
                (url "https://github.com/pcsx2/pcsx2")
                (commit version)
                (recursive? #t)))
-        (sha256 (base32 "1zbbjcikh3csmv60q5iqnipjrlhh2q79vixxf0i310n40l3920wi"))))
+        (sha256 (base32 "195skdlsw60mv50zldr19m9j5s2iajviwxwpy5fzkdkf4hqvfdrp"))))
     (build-system (@ (guix build-system cmake) cmake-build-system))
     (inputs
       (list
