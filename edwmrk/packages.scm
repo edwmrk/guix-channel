@@ -3,6 +3,25 @@
   #:use-module (guix utils)
   #:use-module (guix git-download))
 
+(define-public ani-cli
+  (package
+    (name "ani-cli")
+    (version "v3.2")
+    (source
+      (origin
+        (method git-fetch)
+        (uri (git-reference
+               (url "https://github.com/pystardust/ani-cli")
+               (commit version)))
+        (sha256 (base32 "0k618dl0mdnhnpywy6aydidrf5pmc6k1bdykmazzav7yjmqalb1d"))))
+    (build-system (@ (guix build-system copy) copy-build-system))
+    (arguments '(#:install-plan '(("bin" "/")
+                                  ("lib" "/"))))
+    (home-page "https://github.com/pystardust/ani-cli")
+    (synopsis "A cli tool to browse and play anime")
+    (description #f)
+    (license (@ (guix licenses) gpl3+))))
+
 (define-public sdhcp
   (package
     (name "sdhcp")
