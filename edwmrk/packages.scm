@@ -7,12 +7,13 @@
   (package
     (name "sdhcp")
     (version "8455fd2d090bd9b227340c30c92c6aa13302c91a")
-    (source (origin
-              (method git-fetch)
-              (uri (git-reference
-                    (url "git://git.2f30.org/sdhcp")
-                    (commit version)))
-              (sha256 (base32 "07f545cxrb75csinj7qi82jih0xbnv50fvs4jdf5b9wwxwaa7pbc"))))
+    (source
+      (origin
+        (method git-fetch)
+        (uri (git-reference
+               (url "git://git.2f30.org/sdhcp")
+               (commit version)))
+        (sha256 (base32 "07f545cxrb75csinj7qi82jih0xbnv50fvs4jdf5b9wwxwaa7pbc"))))
     (build-system (@ (guix build-system gnu) gnu-build-system))
     (arguments 
       `(#:phases
