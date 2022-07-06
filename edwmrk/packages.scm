@@ -30,14 +30,14 @@
 (define-public xmrig
   (package
     (name "xmrig")
-    (version "6.17.0")
+    (version "v6.18.0")
     (source
       (origin
         (method git-fetch)
         (uri (git-reference
                (url "https://github.com/xmrig/xmrig")
-               (commit "56c95703a555e8bdf773b51ea475be9ad58c4333")))
-        (sha256 (base32 "11wh2ry3dnjynzc9a3nd8mfja7h6nxmx4fwaha82ssz5dkfqvj9b"))))
+               (commit version)))
+        (sha256 (base32 "1ncnfjpjwjdv29plyiam2nh01bfni49sgfi3qkijygi1450w71dx"))))
     (build-system (@ (guix build-system cmake) cmake-build-system))
     (inputs
       (list
