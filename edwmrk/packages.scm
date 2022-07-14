@@ -6,13 +6,13 @@
 (define-public ani-cli
   (package
     (name "ani-cli")
-    (version "v3.2")
+    (version "3.2")
     (source
       (origin
         (method git-fetch)
         (uri (git-reference
                (url "https://github.com/pystardust/ani-cli")
-               (commit version)))
+               (commit (string-append "v" version))))
         (sha256 (base32 "0k618dl0mdnhnpywy6aydidrf5pmc6k1bdykmazzav7yjmqalb1d"))))
     (build-system (@ (guix build-system copy) copy-build-system))
     (arguments '(#:install-plan '(("bin" "/")
@@ -62,13 +62,13 @@
 (define-public xmrig
   (package
     (name "xmrig")
-    (version "v6.18.0")
+    (version "6.18.0")
     (source
       (origin
         (method git-fetch)
         (uri (git-reference
                (url "https://github.com/xmrig/xmrig")
-               (commit version)))
+               (commit (string-append "v" version))))
         (sha256 (base32 "1ncnfjpjwjdv29plyiam2nh01bfni49sgfi3qkijygi1450w71dx"))))
     (build-system (@ (guix build-system cmake) cmake-build-system))
     (inputs
@@ -92,13 +92,13 @@
 (define-public pcsx2
   (package
     (name "pcsx2")
-    (version "v1.7.3055")
+    (version "1.7.3055")
     (source
       (origin
         (method git-fetch)
         (uri (git-reference
                (url "https://github.com/pcsx2/pcsx2")
-               (commit version)
+               (commit (string-append "v" version))
                (recursive? #t)))
         (sha256 (base32 "195skdlsw60mv50zldr19m9j5s2iajviwxwpy5fzkdkf4hqvfdrp"))))
     (build-system (@ (guix build-system cmake) cmake-build-system))
