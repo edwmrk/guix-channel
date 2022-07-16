@@ -3,6 +3,31 @@
   #:use-module (guix utils)
   #:use-module (guix git-download))
 
+(define-public python-hy
+  (package
+    (name "python-hy")
+    (version "0.24.0")
+    (source
+      (origin
+        (method git-fetch)
+        (uri (git-reference
+               (url "https://github.com/hylang/hy")
+               (commit version)))
+        (sha256 (base32 "1s458ymd9g3s8k2ccc300jr4w66c7q3vhmhs9z3d3a4qg0xdhs9y"))))
+    (build-system (@ (guix build-system python) python-build-system))
+    (arguments '(#:tests? #f))
+    (inputs
+      (list
+        (@ (gnu packages python-xyz) python-astor)
+        (@ (gnu packages python-xyz) python-colorama)
+        (@ (gnu packages python-xyz) python-funcparserlib)
+        (@ (gnu packages python-xyz) python-rply)
+        (@ (gnu packages python-build) python-wheel)))
+    (home-page "https://docs.hylang.org/en/stable/")
+    (synopsis "Lisp frontend to Python")
+    (description "Hy is a dialect of Lisp that's embedded in Python. Since Hy transforms its Lisp code into the Python Abstract Syntax Tree, you have the whole world of Python at your fingertips, in Lisp form.")
+    (license (@ (guix licenses) expat))))
+
 (define-public ani-cli
   (package
     (name "ani-cli")
