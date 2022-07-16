@@ -16,7 +16,7 @@
         (sha256 (base32 "1s458ymd9g3s8k2ccc300jr4w66c7q3vhmhs9z3d3a4qg0xdhs9y"))))
     (build-system (@ (guix build-system python) python-build-system))
     (arguments '(#:tests? #f))
-    (inputs
+    (propagated-inputs
       (list
         (@ (gnu packages python-xyz) python-astor)
         (@ (gnu packages python-xyz) python-colorama)
