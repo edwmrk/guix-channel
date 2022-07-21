@@ -3,6 +3,35 @@
   #:use-module (guix utils)
   #:use-module (guix git-download))
 
+(define-public sxml-utils
+  (package
+    (name "sxml-utils")
+    (version "63815ee05c2b68c4452b5d88d8c4738d07eaa7d2")
+    (source
+      (origin
+        (method git-fetch)
+        (uri (git-reference
+               (url "https://github.com/edwmrk/sxml-utils")
+               (commit version)))
+        (sha256 (base32 "1nap1hyj817liz4a690bhha9x4zwn3glkpcqwciswl2shqzcmnka"))))
+    (build-system (@ (guix build-system gnu) gnu-build-system))
+    (home-page "https://github.com/edwmrk/sxml-utils")
+    (inputs 
+      (list (@ (gnu packages guile) guile-3.0)))
+    (arguments
+      '(#:tests? #f
+        #:phases
+        (modify-phases %standard-phases
+          (delete 'configure)
+          (replace 'install
+            (lambda* (#:key outputs #:allow-other-keys)
+              (let ((out (assoc-ref outputs "out")))
+                (invoke "make" "install"
+                        (string-append "DESTDIR=" out))))))))
+    (synopsis #f)
+    (description #f)
+    (license (@ (guix licenses) gpl3+))))
+
 (define-public python-hy
   (package
     (name "python-hy")
