@@ -23,7 +23,7 @@
         (@ (gnu packages python-xyz) python-funcparserlib)
         (@ (gnu packages python-xyz) python-rply)
         (@ (gnu packages python-build) python-wheel)))
-    (home-page "https://docs.hylang.org/en/stable/")
+    (home-page "https://hylang.org")
     (synopsis "Lisp frontend to Python")
     (description "Hy is a dialect of Lisp that's embedded in Python. Since Hy transforms its Lisp code into the Python Abstract Syntax Tree, you have the whole world of Python at your fingertips, in Lisp form.")
     (license (@ (guix licenses) expat))))
