@@ -16,7 +16,7 @@
         (sha256 (base32 "1nap1hyj817liz4a690bhha9x4zwn3glkpcqwciswl2shqzcmnka"))))
     (build-system (@ (guix build-system gnu) gnu-build-system))
     (home-page "https://github.com/edwmrk/sxml-utils")
-    (inputs 
+    (inputs
       (list (@ (gnu packages guile) guile-3.0)))
     (arguments
       '(#:tests? #f
@@ -103,7 +103,7 @@
                (commit version)))
         (sha256 (base32 "07f545cxrb75csinj7qi82jih0xbnv50fvs4jdf5b9wwxwaa7pbc"))))
     (build-system (@ (guix build-system gnu) gnu-build-system))
-    (arguments 
+    (arguments
       `(#:phases
         (modify-phases %standard-phases
           (delete 'configure)
