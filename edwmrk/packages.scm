@@ -6,14 +6,14 @@
 (define-public sxml-utils
   (package
     (name "sxml-utils")
-    (version "dbe3cbee314608753e4a4ba5edfd090c1fbdebf6")
+    (version "856f491e44569ff0b65ba6007bcf2272287841c4")
     (source
       (origin
         (method git-fetch)
         (uri (git-reference
                (url "https://github.com/edwmrk/sxml-utils")
                (commit version)))
-        (sha256 (base32 "0s1vb8179k181xb6bnnqi5xbd1k4clm8iaxhp6ah8zm9mab1rr0c"))))
+        (sha256 (base32 "1273hcmyvj0jp63i2i6a8rcjgf4hfqkzkggd4i5f64slbpmg4ha4"))))
     (build-system (@ (guix build-system gnu) gnu-build-system))
     (home-page "https://github.com/edwmrk/sxml-utils")
     (inputs
