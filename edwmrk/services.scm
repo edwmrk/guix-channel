@@ -4,8 +4,11 @@
   #:use-module (guix gexp)
   #:use-module (guix records)
   #:export (dhcp-client-configuration
-            dhcp-client-shepherd-service
-            dhcp-client-service-type))
+            dhcp-client-configuration-domain-name-servers
+            dhcp-client-configuration-pid-file
+            dhcp-client-configuration?
+            dhcp-client-service-type
+            dhcp-client-shepherd-service))
 
 (define-record-type* <dhcp-client-configuration>
   dhcp-client-configuration
