@@ -1,7 +1,10 @@
 (define-module (edwmrk services)
   #:use-module (gnu services shepherd)
   #:use-module (gnu services)
-  #:use-module (guix records))
+  #:use-module (guix records)
+  #:export (dhcp-client-configuration
+            dhcp-client-shepherd-service
+            dhcp-client-service-type))
 
 (define-record-type* <dhcp-client-configuration>
   dhcp-client-configuration
