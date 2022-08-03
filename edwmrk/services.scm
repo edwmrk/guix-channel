@@ -60,6 +60,12 @@
     (name 'dhcp-client)
     (extensions
       (list
+        (service-extension activation-service-type
+          (λ (configuration)
+            (let ((pid-file
+                    (dhcp-client-configuration-pid-file
+                      configuration)))
+              #~(mkdir-p (dirname #$pid-file)))))
         (service-extension shepherd-root-service-type
           (λ arguments (list (apply dhcp-client-shepherd-service arguments))))))
     (default-value (dhcp-client-configuration))
