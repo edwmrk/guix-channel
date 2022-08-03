@@ -35,14 +35,14 @@
 
                  (define dhcp-client-command
                    (cons* #$(file-append (@ (gnu packages admin) isc-dhcp) "/sbin/dhclient")
-                            "-nw"
-                            "-cf" #$(plain-file "dhclient-configuration-file"
-                                      (string-append
-                                        "supersede domain-name-servers "
-                                        (string-join domain-name-servers ", ")
-                                        ";\n"))
-                            "-pf" #$pid-file
-                            interfaces))
+                          "-nw"
+                          "-cf" #$(plain-file "dhclient-configuration-file"
+                                    (string-append
+                                      "supersede domain-name-servers "
+                                      (string-join domain-name-servers ", ")
+                                      ";\n"))
+                          "-pf" #$pid-file
+                          interfaces))
 
                  (false-if-exception (delete-file #$pid-file))
                  (let ((pid (fork+exec-command dhcp-client-command)))
