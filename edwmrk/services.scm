@@ -13,13 +13,18 @@
   dhcp-client-configuration?
   (domain-name-servers
     dhcp-client-configuration-domain-name-servers
-    (default '("8.8.8.8"))))
+    (default '("8.8.8.8")))
+  (pid-file
+    dhcp-client-configuration-pid-file
+    (default "/var/run/dhclient.pid")))
 
 (define (dhcp-client-shepherd-service configuration)
   (let ((domain-name-servers
           (dhcp-client-configuration-domain-name-servers
             configuration))
-        (pid-file "/var/run/dhclient.pid"))
+        (pid-file
+          (dhcp-client-configuration-pid-file
+            configuration)))
     (shepherd-service
       (requirement '(user-processes udev))
       (provision '(networking dhcp-client))
